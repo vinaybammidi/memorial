@@ -9,9 +9,9 @@ body {
     font-family: 'Playfair Display', Georgia, serif; 
     margin: 0;
     line-height: 1.6;
-    color: #F0E6D0; /* Off-White for main text */
+    color: #F0E6D0; 
     background-color: #1a1a1a;
-    background-image: url('candlelight-background.jpg'); /* Dark candlelight background */
+    background-image: url('candlelight-background.jpg'); 
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -19,19 +19,19 @@ body {
 
 .container {
     max-width: 960px;
-    margin: 0 auto; /* Removed top margin, adding margin-top to sections */
+    margin: 0 auto; 
     padding: 0 20px;
 }
 
-/* Header/Hero Section */
+/* --- Header/Hero Section --- */
 .hero {
-    padding: 70px 20px 0 20px; /* Reduced bottom padding */
+    padding: 70px 20px 0 20px; 
     position: relative;
-    background-color: rgba(0, 0, 0, 0.75); /* Darker overlay */
+    background-color: rgba(0, 0, 0, 0.75); 
     z-index: 10;
 }
 
-/* Background overlay (unchanged) */
+/* Background overlay */
 .hero::before {
     content: '';
     position: absolute;
@@ -43,7 +43,7 @@ body {
     z-index: 1;
 }
 
-/* Flexbox container for the left/right layout */
+/* Flexbox container for the left/right layout (Desktop View) */
 .hero-layout-container {
     display: flex;
     justify-content: space-between; 
@@ -54,23 +54,24 @@ body {
     z-index: 2;
     flex-wrap: wrap; 
     padding: 0 40px;
-    padding-bottom: 50px; /* Space between flex items and summary text */
+    padding-bottom: 50px; 
 }
 
 /* Left Content (Profile and Text) */
 .hero-left-content {
-    flex: 2; 
+    flex: 2; /* Takes more space than the candle */
     text-align: left;
     padding-right: 40px;
     position: relative;
+    min-width: 300px; /* Prevents text from collapsing too much */
 }
 
-/* Vertical Divider: Matches the linked design's structure */
+/* Vertical Divider (Desktop Only) */
 .hero-left-content::after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0; /* Aligned to the right edge of the left content */
+    right: 0; 
     width: 2px;
     height: 100%;
     background-color: #B8860B;
@@ -79,7 +80,7 @@ body {
 
 /* Main Name */
 .hero h1 {
-    font-family: 'Cinzel', serif; /* Strong, formal font */
+    font-family: 'Cinzel', serif; 
     font-size: 4em;
     margin: 0;
     color: #F0E6D0; 
@@ -94,7 +95,7 @@ body {
     font-family: 'Playfair Display', serif; 
     font-size: 1.4em;
     font-style: italic;
-    color: #B8860B; /* Gold for the title */
+    color: #B8860B; 
     margin: 0 0 10px 0;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -113,17 +114,18 @@ body {
     max-height: 400px; 
     display: block; 
     margin-left: auto; 
+    box-shadow: 0 0 15px rgba(255, 255, 100, 0.2); /* Subtle glow */
 }
 
 /* Profile Image Styling */
 .profile-image-container {
-    width: 210px; 
-    height: 200px;
-    border-radius: 80%; 
+    width: 180px; 
+    height: 180px;
+    border-radius: 50%; 
     overflow: hidden;
     margin-bottom: 25px; 
-    border: 5px solid #B8860B; /* Gold circle border */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(184, 134, 11, 0.5); /* Gold glow shadow */
+    border: 5px solid #B8860B; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(184, 134, 11, 0.5); 
     background-color: #333; 
 }
 
@@ -133,7 +135,7 @@ body {
     object-fit: fit; 
 }
 
-/* Bottom Header Summary Text (Matches linked design's floating text) */
+/* Bottom Header Summary Text */
 .tribute-summary {
     max-width: 1200px;
     margin: 0 auto;
@@ -152,34 +154,23 @@ body {
     margin: 0;
 }
 
-/* Main Content Sections */
-.tribute-section, .gallery-section, .messages-section {
+/* --- Main Content Sections --- */
+.tribute-section {
     background-color: rgba(25, 25, 25, 0.9); 
     padding: 40px;
-    margin-top: 50px; /* Increased top margin for separation */
+    margin-top: 50px; 
     margin-bottom: 50px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     text-align: center;
 }
 
-/* Tribute Section Titles */
-.tribute-section h2, .gallery-section h2, .messages-section h2 {
+.tribute-section h2 {
     font-family: 'Cinzel', serif;
     font-size: 2.5em;
     color: #B8860B; 
     margin-bottom: 15px;
     text-transform: uppercase;
-}
-
-.candle-icon-wrapper {
-    font-size: 2em;
-    color: #B8860B;
-    margin-bottom: 20px;
-}
-.candle-flame {
-    color: transparent; 
-    text-shadow: 0 0 10px #FFD700; 
 }
 
 .tribute-section p {
@@ -198,65 +189,58 @@ body {
     font-size: 1.2em;
 }
 
-/* Gallery and Messages (unchanged from last version, maintaining gold accents) */
-.gallery-grid img {
-    border: 3px solid #B8860B; 
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
-}
-
-.condolence-form button {
-    background-color: #B8860B; 
-    color: #1a1a1a; 
-    font-weight: bold;
-}
-
-.condolence-form button:hover {
-    background-color: #DAA520; 
-}
-
-.message-item {
-    background-color: rgba(50, 50, 50, 0.9);
-    border-left: 5px solid #B8860B; 
-}
-
-.message-item span {
-    color: #B8860B; 
-}
-
-/* Footer */
+/* --- Footer --- */
 footer {
     text-align: center;
     padding: 30px 20px;
-    margin-top: 0; /* Remove margin, keep separation with section margin */
+    margin-top: 0; 
     background-color: rgba(0, 0, 0, 0.8);
     color: #B8860B; 
     border-top: 1px solid #B8860B;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
+/* ======================================= */
+/* ====== RESPONSIVENESS (Media Queries) ====== */
+/* ======================================= */
+
+/* Large Tablets and smaller Desktops (Max width 1200px) */
+@media (max-width: 1200px) {
     .hero-layout-container {
-        flex-direction: column; 
         padding: 0 20px;
     }
-    .hero-left-content {
-        padding-right: 0;
-        text-align: center;
-        order: 2; 
+}
+
+/* Tablets and small screens (Max width 992px) */
+@media (max-width: 992px) {
+    /* Stack content vertically */
+    .hero-layout-container {
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
     }
+    
+    /* Reorder content for better flow (candle on top) */
     .hero-right-candle {
-        order: 1; 
+        order: 1; /* Move candle to the top */
         margin-bottom: 30px; 
     }
+    .hero-left-content {
+        order: 2; /* Move text/image below candle */
+        padding-right: 0;
+        text-align: center;
+    }
+
+    /* Hide the vertical divider when stacked */
     .hero-left-content::after {
-        /* Hide vertical line on mobile */
         content: none;
     }
+
+    /* Center image and adjust margins */
+    .profile-image-container {
+        margin: 0 auto 20px auto; 
+    }
+
+    /* Font Size Adjustments */
     .hero h1 {
         font-size: 3em;
         letter-spacing: 3px;
@@ -264,15 +248,27 @@ footer {
     .sub-title {
         font-size: 1.2em;
     }
+    
+    .large-candle {
+        max-height: 300px; /* Smaller candle on tablet */
+    }
+
     .tribute-summary {
         padding: 0 20px 30px 20px;
     }
     .tribute-summary p {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 }
 
+/* Mobile Phones (Max width 480px) */
 @media (max-width: 480px) {
+    /* Smaller padding and general adjustments */
+    .hero {
+        padding-top: 50px;
+    }
+
+    /* Smaller main name */
     .hero h1 {
         font-size: 2.2em;
         letter-spacing: 2px;
@@ -280,8 +276,23 @@ footer {
     .sub-title {
         font-size: 1em;
     }
+    
+    /* Smaller profile image */
     .profile-image-container {
         width: 120px;
         height: 120px;
+    }
+    
+    .large-candle {
+        max-height: 250px; /* Smallest candle size */
+    }
+
+    /* Smaller tribute text */
+    .tribute-summary p {
+        font-size: 1.1em;
+    }
+    
+    .tribute-section h2 {
+        font-size: 2em;
     }
 }
