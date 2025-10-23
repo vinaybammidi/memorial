@@ -1,0 +1,287 @@
+/* Color Palette: 
+   - Primary Dark: #1a1a1a (Deep Black)
+   - Accent Gold: #B8860B (Dark Gold/Goldenrod)
+   - Text Light/Gold: #F0E6D0 (Off-White/Very Pale Gold)
+*/
+
+/* General Body Styles */
+body {
+    font-family: 'Playfair Display', Georgia, serif; 
+    margin: 0;
+    line-height: 1.6;
+    color: #F0E6D0; /* Off-White for main text */
+    background-color: #1a1a1a;
+    background-image: url('candlelight-background.jpg'); /* Dark candlelight background */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto; /* Removed top margin, adding margin-top to sections */
+    padding: 0 20px;
+}
+
+/* Header/Hero Section */
+.hero {
+    padding: 70px 20px 0 20px; /* Reduced bottom padding */
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.75); /* Darker overlay */
+    z-index: 10;
+}
+
+/* Background overlay (unchanged) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+/* Flexbox container for the left/right layout */
+.hero-layout-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap; 
+    padding: 0 40px;
+    padding-bottom: 50px; /* Space between flex items and summary text */
+}
+
+/* Left Content (Profile and Text) */
+.hero-left-content {
+    flex: 2; 
+    text-align: left;
+    padding-right: 40px;
+    position: relative;
+}
+
+/* Vertical Divider: Matches the linked design's structure */
+.hero-left-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0; /* Aligned to the right edge of the left content */
+    width: 2px;
+    height: 100%;
+    background-color: #B8860B;
+    opacity: 0.7;
+}
+
+/* Main Name */
+.hero h1 {
+    font-family: 'Cinzel', serif; /* Strong, formal font */
+    font-size: 4em;
+    margin: 0;
+    color: #F0E6D0; 
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Subtitle/Tribute Text */
+.sub-title {
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.4em;
+    font-style: italic;
+    color: #B8860B; /* Gold for the title */
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Right Content (Candle) */
+.hero-right-candle {
+    flex: 1; 
+    text-align: right;
+    min-width: 200px; 
+}
+
+.large-candle {
+    max-width: 100%; 
+    height: auto;
+    max-height: 400px; 
+    display: block; 
+    margin-left: auto; 
+}
+
+/* Profile Image Styling */
+.profile-image-container {
+    width: 210px; 
+    height: 200px;
+    border-radius: 80%; 
+    overflow: hidden;
+    margin-bottom: 25px; 
+    border: 5px solid #B8860B; /* Gold circle border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(184, 134, 11, 0.5); /* Gold glow shadow */
+    background-color: #333; 
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fit; 
+}
+
+/* Bottom Header Summary Text (Matches linked design's floating text) */
+.tribute-summary {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 40px 50px 40px; 
+    z-index: 2;
+    position: relative;
+}
+
+.tribute-summary p {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5em;
+    color: #B8860B; 
+    font-style: italic;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Main Content Sections */
+.tribute-section, .gallery-section, .messages-section {
+    background-color: rgba(25, 25, 25, 0.9); 
+    padding: 40px;
+    margin-top: 50px; /* Increased top margin for separation */
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+/* Tribute Section Titles */
+.tribute-section h2, .gallery-section h2, .messages-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5em;
+    color: #B8860B; 
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.candle-icon-wrapper {
+    font-size: 2em;
+    color: #B8860B;
+    margin-bottom: 20px;
+}
+.candle-flame {
+    color: transparent; 
+    text-shadow: 0 0 10px #FFD700; 
+}
+
+.tribute-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #F0E6D0;
+    line-height: 1.7;
+}
+
+.signature {
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #B8860B;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+}
+
+/* Gallery and Messages (unchanged from last version, maintaining gold accents) */
+.gallery-grid img {
+    border: 3px solid #B8860B; 
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.condolence-form button {
+    background-color: #B8860B; 
+    color: #1a1a1a; 
+    font-weight: bold;
+}
+
+.condolence-form button:hover {
+    background-color: #DAA520; 
+}
+
+.message-item {
+    background-color: rgba(50, 50, 50, 0.9);
+    border-left: 5px solid #B8860B; 
+}
+
+.message-item span {
+    color: #B8860B; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 0; /* Remove margin, keep separation with section margin */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #B8860B; 
+    border-top: 1px solid #B8860B;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .hero-layout-container {
+        flex-direction: column; 
+        padding: 0 20px;
+    }
+    .hero-left-content {
+        padding-right: 0;
+        text-align: center;
+        order: 2; 
+    }
+    .hero-right-candle {
+        order: 1; 
+        margin-bottom: 30px; 
+    }
+    .hero-left-content::after {
+        /* Hide vertical line on mobile */
+        content: none;
+    }
+    .hero h1 {
+        font-size: 3em;
+        letter-spacing: 3px;
+    }
+    .sub-title {
+        font-size: 1.2em;
+    }
+    .tribute-summary {
+        padding: 0 20px 30px 20px;
+    }
+    .tribute-summary p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2em;
+        letter-spacing: 2px;
+    }
+    .sub-title {
+        font-size: 1em;
+    }
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+    }
+}

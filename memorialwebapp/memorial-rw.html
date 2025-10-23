@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Loving Memory of Richard Wilkies</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="background-audio" src="tribute_music.mp3" autoplay loop volume="1"></audio>
+
+    <header class="hero">
+        <div class="hero-layout-container">
+            <div class="hero-left-content">
+                <div class="profile-image-container">
+                    <img src="images/richard-wikies-1.jpeg" alt="Richard Wilkies" class="profile-image">
+                </div>
+                <p class="sub-title">A Tribute To Our Team Director</p>
+                <h1>RICHARD WILKIES</h1>
+            </div>
+            
+            <div class="hero-right-candle">
+                <img src="images/candle.gif" alt="Large Memorial Candle" class="large-candle">
+            </div>
+        </div>
+        
+        <div class="tribute-summary">
+            <p>
+                A visionary leader whose dedication and wisdom shaped our team. His spirit remains an enduring inspiration to us all.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="tribute-section">
+            <h2>His Legacy Lives On</h2>
+            <!-- <div class="candle-icon-wrapper">
+                <span class="candle-flame">🕯️</span>
+            </div> -->
+            <p>
+                Richard Wilkies was more than just a Team Director; he was a mentor, an inspiration, and a true leader. His dedication, wisdom, and unwavering support created an environment where we could all thrive. We are forever grateful for the time we shared and the invaluable lessons he imparted. He will be deeply missed, but his legacy will continue to guide us.
+            </p>
+            <p class="signature">— The Team —</p>
+        </section>
+
+        <!-- <section class="gallery-section">
+            <h2>Memories We Cherish</h2>
+            <div class="gallery-grid">
+                <img src="memory1.jpg" alt="Memory 1">
+                <img src="memory2.jpg" alt="Memory 2">
+                <img src="memory3.jpg" alt="Memory 3">
+                <img src="memory4.jpg" alt="Memory 4">
+            </div>
+        </section> -->
+
+        <!-- <section class="messages-section">
+            <h2>Share Your Condolences</h2>
+            <form class="condolence-form">
+                <textarea placeholder="Write your message here..."></textarea>
+                <input type="text" placeholder="Your Name (Optional)">
+                <button type="submit">Submit Message</button>
+            </form>
+            <div class="messages-list">
+                <div class="message-item">
+                    <p>"Richard was an incredible person. His guidance helped me immensely in my career."</p>
+                    <span>- Jane Doe</span>
+                </div>
+                <div class="message-item">
+                    <p>"He always had a positive outlook and a kind word for everyone. A true gentleman."</p>
+                    <span>- John Smith</span>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <footer>
+        <p>In Loving Memory | &copy; 2025</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('background-audio');
+            
+            // Function to try and play audio
+            function tryPlayAudio() {
+                // The 'play()' function is inherently asynchronous.
+                // It returns a Promise that is resolved if playback starts successfully,
+                // or rejected if playback fails (usually due to user interaction policy).
+                audio.play().catch(error => {
+                    // Log the error for debugging, but don't show it to the user.
+                    // console.log("Autoplay blocked:", error.name);
+                });
+            }
+
+            // 1. Try playing immediately upon page load.
+            tryPlayAudio();
+            
+            // 2. Add an event listener to the entire document to catch the first user interaction.
+            // This ensures music plays reliably without blocking the page.
+            document.addEventListener('mousedown', tryPlayAudio, { once: true });
+            document.addEventListener('touchstart', tryPlayAudio, { once: true });
+        });
+    </script>
+</body>
+</html>
